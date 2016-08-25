@@ -1,3 +1,7 @@
+#ignore build files
+/client/compiled
+*.swp
+
 # Logs
 logs
 *.log
