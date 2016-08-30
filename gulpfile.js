@@ -59,6 +59,10 @@ gulp.task('css', ['wipeFiles'], function () {
         './node_modules/**/*.min.css'])
         .pipe(gulp.dest('./client/compiled/css'));
     
+     gulp.src([
+        './node_modules/normalize.css/normalize.css'])
+        .pipe(gulp.dest('./client/compiled/css'));    
+
     gulp.src([
         './node_modules/components-font-awesome/fonts/*.*'])
         .pipe(gulp.dest('./client/compiled/css/components-font-awesome/fonts'));
@@ -80,34 +84,31 @@ gulp.task('css', ['wipeFiles'], function () {
 //        .pipe(gulp.dest('./app/scripts'))
 //});
 
-//gulp.task('sass', ['wipeFiles'], function () {
-//    gulp.src('./scss/style.scss')
-//      .pipe(sass().on('error', sass.logError))
-//      .pipe(minifyCSS())
-//      .pipe(rename('style.min.css'))
-//      .pipe(gulp.dest('./client/compiled/css'))
-//
-//    gulp.src('./scss/print.scss')
-//      .pipe(sass().on('error', sass.logError))
-//      .pipe(minifyCSS())
-//      .pipe(rename('print.min.css'))
-//      .pipe(gulp.dest('./clientCompiled/css'))
-//
-//    gulp.src('./bower_components/**/*.min.css')
-//        .pipe(gulp.dest('./clientCompiled/css'))
-//
-//    gulp.src('./bower_components/components-font-awesome/fonts/*.*')
-//        .pipe(gulp.dest('./clientCompiled/fonts'))
-//
-//    gulp.src('./bower_components/components-font-awesome/css/*.*')
-//        .pipe(gulp.dest('./clientCompiled/css'))
-//
-//    gulp.src('./bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/fonts/*.*')
-//        .pipe(gulp.dest('./clientCompiled/fonts'))
-//
-// gulp.src('./bower_components/bootstrap-sass/assets/fonts/bootstrap/*.*')
-//        .pipe(gulp.dest('./clientCompiled/fonts/bootstrap'))
-//});
+gulp.task('sass', ['wipeFiles'], function () {
+   gulp.src('./scss/style.scss')
+     .pipe(sass().on('error', sass.logError))
+     .pipe(minifyCSS())
+     .pipe(rename('style.min.css'))
+     .pipe(gulp.dest('./client/compiled/css'))
+
+   gulp.src('./scss/print.scss')
+     .pipe(sass().on('error', sass.logError))
+     .pipe(minifyCSS())
+     .pipe(rename('print.min.css'))
+     .pipe(gulp.dest('./clientCompiled/css'))
+
+   gulp.src('./client/scss/style.scss')
+     .pipe(sass().on('error', sass.logError))
+     .pipe(gulp.dest('./client/compiled/css'))
+
+   gulp.src('./bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/fonts/*.*')
+       .pipe(gulp.dest('./clientCompiled/fonts'))
+    gulp.src('./scss/*.scss')
+       .pipe(sass({
+            includePaths: ['node_modules/foundation-sites/scss']
+        }))
+       .pipe(gulp.dest('./css'));
+});
 
 /*
 gulp.task('preventcache', function () {
@@ -135,5 +136,5 @@ gulp.task('preventcache', function () {
 */
 
 //Set a default tasks
-gulp.task('default', ['wipeFiles', 'staticContent', 'scripts', 'css'], function () { });
+gulp.task('default', ['wipeFiles', 'staticContent', 'scripts', 'css', 'sass'], function () { });
 

@@ -1,0 +1,89 @@
+$duration: 30s;
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 2rem;
+  background-color: rgba(#000, 0.9); 
+  padding-left: 100%;  // offset items to begin 
+  
+}
+
+.ticker-caption {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 5px;
+  color: #b23f77;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.ticker {
+    
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;  
+  white-space: nowrap; // display items in a line
+  padding-right: 100%; // ensure items go before animations repeat (taken from parent due to inline-block)
+
+  -webkit-animation-iteration-count: infinite; 
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+ -webkit-animation-name: ticker;
+         animation-name: ticker;
+  -webkit-animation-duration: $duration;
+          animation-duration: $duration;
+  &:hover {    
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+  }
+  &-item {
+    
+    display: inline-block;
+    
+    padding: 0 2rem;
+    font-size: 1rem;  
+    font-family: monospace;
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #3fb1b2;
+      }
+    }
+  }  
+}

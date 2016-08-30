@@ -4,8 +4,7 @@
                 'ui.router',
                 'ngCookies',
                 'ngMessages',
-                'ui.bootstrap',
-                'ngMaterial'
+                'ui.bootstrap'                
             ]
         )
         .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {

@@ -8,14 +8,10 @@
     <title>BitCoin Explorer</title>
 
     <link rel="icon" type="image/png" href="img/favicon.ico">
-
-
-    <link href="css/sb-admin-2.css" rel="stylesheet" />
-    <link href="css/timeline.css" rel="stylesheet" />
-    <link href="css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/normalize.css" rel="stylesheet" />    
+    <link href="css/flexboxgrid/dist/flexboxgrid.min.css" rel="stylesheet" />    
     <link href="css/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-
+    <link href="css/style.css" rel="stylesheet" />    
 
     <!--3rd Party Scripts-->
     <script src="scripts/angular/angular.min.js?version=~~**CacheKey**~~"></script>
@@ -23,11 +19,8 @@
     <script src="scripts/angular-cookies/angular-cookies.min.js?version=~~**CacheKey**~~"></script>
     <script src="scripts/angular-messages/angular-messages.min.js?version=~~**CacheKey**~~"></script>
     <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.min.js?version=~~**CacheKey**~~"></script>
-    <!-- <script src="scripts/ng-toast/node_modules/angular-sanitize/angular-sanitize.min.js?version=~~**CacheKey**~~"></script> -->
-    <script src="scripts/angular-animate/angular-animate.min.js?version=~~**CacheKey**~~"></script>
-    <script src="scripts/ng-toast/dist/ngToast.min.js?version=~~**CacheKey**~~"></script>
-    <script src="scripts/angular-aria/angular-aria.min.js?version=~~**CacheKey**~~"></script>
-    <script src="scripts/angular-material/angular-material.min.js?version=~~**CacheKey**~~"></script>
+    <script src="scripts/angular-animate/angular-animate.min.js?version=~~**CacheKey**~~"></script>    
+    <script src="scripts/angular-aria/angular-aria.min.js?version=~~**CacheKey**~~"></script>    
 
     <!--System Scripts-->
     <script src="scripts/app.js?version=~~**CacheKey**~~"></script>
@@ -48,6 +41,6 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <toast></toast>
-    <div ui-view></div>
+    <div class="container-fluid" ui-view></div>
 </body>
 </html>
