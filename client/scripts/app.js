@@ -4,7 +4,8 @@
                 'ui.router',
                 'ngCookies',
                 'ngMessages',
-                'ui.bootstrap'                
+                'ui.bootstrap',
+                'chart.js'
             ]
         )
         .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {

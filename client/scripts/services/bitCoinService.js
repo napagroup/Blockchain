@@ -15,6 +15,17 @@
             
             return deferred.promise;
         };
+
+        var getChartData = function (args){
+            var deferred = $q.defer();
+            $http.get('/api/bitCoin/chart', {params: args }).then(function(response){
+                deferred.resolve(response.data);
+            },function(err, status){
+                deferred.reject(err.data);
+            });
+
+            return deferred.promise;
+        };
                 
         var init = function () {
             //appSettings = appSettingsService.getAppSettings();
@@ -23,7 +34,8 @@
         init();
 
         return {
-            getBitCoinData: getBitCoinData    
+            getBitCoinData: getBitCoinData,
+            getChartData: getChartData
         };
     }]);
 }());
