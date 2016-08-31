@@ -13,3 +13,4 @@ http.createServer(app).listen(12505);
 
 app.use('/', express.static('./client/compiled'));
 app.get('/api/bitCoin/browse', bitCoinController.browseBitCoin);
+app.get('/api/bitCoin/chart', bitCoinController.getChartInfo);

@@ -10,6 +10,18 @@ var browseBitCoin = function (req, res) {
             });
 }
 
+var getChartInfo = function(req, res) {
+    blockChainService.getChartInfo({
+        successCallback: function(data) {
+            res.json(data);
+        },
+        failCallback: function(err) {
+            res.status(500).json({ error: err});
+        },
+        chartType: req.query.chartType
+    });
+};
 module.exports = {
-    browseBitCoin: browseBitCoin
+    browseBitCoin: browseBitCoin,
+    getChartInfo: getChartInfo
 };
