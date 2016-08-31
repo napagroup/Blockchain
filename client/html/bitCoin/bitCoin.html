@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top has-ticker">
+<div class="navbar has-ticker">
     <div class="ticker-wrap">
         <div class="ticker">
             <div class="ticker-item"><a href="">0.08 &#579;</a></div>
@@ -68,11 +68,146 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-            The Chart Goes Here
+        <div class="col-xs-12 col-sm-9 col-md-10">
+            <h3>Market Price (USD)</h3>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            The List of Blocks goes Here
+        <div class="col-xs-12 col-sm-3 col-md-2">
+            <h3>Latest Blocks Mined</h3>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427708</a>
+                    <small>1 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>2314 transactions</div>
+                        <div>14,660.05 &#579; sent</div>
+                        <div>Relayed by F2Pool</div>
+                        <div>929KB</div>
+                    </small>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427707</a>
+                    <small>15 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>323 transactions</div>
+                        <div>661.93 &#579; sent</div>
+                        <div>Relayed by SlushPool</div>
+                        <div>123KB</div>
+                    </small>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427706</a>
+                    <small>17 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>399 transactions</div>
+                        <div>1,444.32 &#579; sent</div>
+                        <div>Relayed by AntPool</div>
+                        <div>990KB</div>
+                    </small>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427705</a>
+                    <small>18 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>1082 transactions</div>
+                        <div>3,754.79 &#579; sent</div>
+                        <div>Relayed by AntPool</div>
+                        <div>594KB</div>
+                    </small>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427704</a>
+                    <small>22 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>2671 transactions</div>
+                        <div>14,457.13 &#579; sent</div>
+                        <div>Relayed by BTCC Pool</div>
+                        <div>998.1KB</div>
+                    </small>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="header">
+                    <a href="">427703</a>
+                    <small>40 min ago</small>
+                </div>
+                <div class="body text-right">
+                    <small>
+                        <div>717 transactions</div>
+                        <div>3,453.50 &#579; sent</div>
+                        <div>Relayed by BitFury</div>
+                        <div>469KB</div>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row dynamic-grid">
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-cubes fa-3x"></i>
+                <h4>{{bitCoinInfo.n_blocks_mined | number : 0}}</h4>
+                <h5>Blocks Mined</h5>                
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-th fa-3x"></i>
+                <h4>{{bitCoinInfo.n_tx | number: 0}}</h4>
+                <h5>No. of Transactions</h5>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-clock-o fa-3x"></i>
+                <h4>{{bitCoinInfo.minutes_between_blocks | number: 2}} min</h4>
+                <h5>Time Between Blocks</h5>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-dollar fa-3x"></i>
+                <h4>{{bitCoinInfo.n_btc_mined / 100000000 | number : 2}}</h4>
+                <h5>Bitcoins Mined</h5>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-dollar fa-3x"></i>
+                <h4>{{bitCoinInfo.market_price_usd}} USD</h4>
+                <h5>Market Price</h5>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-dollar fa-3x"></i>
+                <h4>{{bitCoinInfo.miners_revenue_usd | number : 2}} k USD</h4>
+                <h5>Total Miner's Revenue</h5>                
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="tile text-center">
+                <i class="fa fa-shopping-cart fa-3x"></i>
+                <h4>{{bitCoinInfo.miners_revenue_usd / bitCoinInfo.n_tx | number : 2}}</h4>
+                <h5>Cost per Transaction</h5>                
+            </div>
         </div>
     </div>
 </div>

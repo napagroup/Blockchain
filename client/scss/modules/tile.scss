@@ -1,0 +1,13 @@
+$tile-background: #fff;
+$tile-padding: $base-padding;
+
+.tile {
+    background: $tile-background;
+    padding: $tile-padding;
+    margin-bottom: 10px;
+    > .header {
+    	margin-bottom: 10px;
+    }    
+}
+
+@include dynamic-grid(tile); 

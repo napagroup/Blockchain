@@ -33,11 +33,11 @@ $ticker-height: 2rem;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   height: $ticker-height;
   background-color: darken($navbar-bg-color, 10%); 
-  padding-left: 100%;  // offset items to begin 
+  padding-left: 100vw;  // offset items to begin 
   
 }
 
@@ -57,7 +57,7 @@ $ticker-height: 2rem;
   height: $ticker-height;
   line-height: $ticker-height;  
   white-space: nowrap; // display items in a line
-  padding-right: 100%; // ensure items go before animations repeat (taken from parent due to inline-block)
+  padding-right: 100vw; // ensure items go before animations repeat (taken from parent due to inline-block)
 
   -webkit-animation-iteration-count: infinite; 
           animation-iteration-count: infinite;

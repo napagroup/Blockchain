@@ -1,3 +1,31 @@
 // COLORS
 $logo-color:    #d5b019;
 $logo-bg-color: #67828d;
+
+$body-bg-color: #f5f5f5;
+
+// MIXINS
+
+@mixin dynamic-grid($class-name) {	
+
+	$color1:  #9FA8DA; // indigo 200
+	$color2:  #C5E1A5; // light green 200
+	$color3:  #E6EE9C; // lime 200
+	$color4:  #FFF59D; // yellow 200
+	$color5:  #FFCC80; // orange 200
+	$color6:  #FFAB91; // deep orange 200
+	$color7:  #B0BEC5; // blue grey 200
+	$color8:  #BCAAA4; // brown 200
+	$color9:  #80CBC4; // teal 200
+	$color10: #90CAF9; // blue 200
+	$color11: #F48FB1; // pink 200
+	$color12: #81D4FA; // light 200
+
+	$colors: $color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8, $color9, $color10, $color11, $color12;
+
+	@for $i from 1 through length($colors) {
+		.dynamic-grid > *:nth-child(#{$i}n) > .#{$class-name} {
+			background-color: nth($colors, $i);
+		}
+	}
+}
