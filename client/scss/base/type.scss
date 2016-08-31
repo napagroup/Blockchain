@@ -1,0 +1,14 @@
+$body-font-size: 1rem;
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-size: $body-font-size;
+	font-family: 'Open Sans', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}

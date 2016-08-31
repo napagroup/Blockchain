@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 
-    <title>BitCoin Explorer</title>
+    <title>BitBit: The Premiere Bitcoin Explored</title>
 
     <link rel="icon" type="image/png" href="img/favicon.ico">
     <link href="css/normalize.css" rel="stylesheet" />    
     <link href="css/flexboxgrid/dist/flexboxgrid.min.css" rel="stylesheet" />    
     <link href="css/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />    
+    
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Open+Sans" rel="stylesheet">    
 
     <!--3rd Party Scripts-->
     <script src="scripts/angular/angular.min.js?version=~~**CacheKey**~~"></script>
@@ -35,12 +38,11 @@
     </style>
 </head>
 <body ng-app="bitCoinExplorer">
-    <div> <!-- insert tabs here --> </div>
     <!--ng-cloak is for hiding curly braces before the app has fully loaded-->
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <toast></toast>
-    <div class="container-fluid" ui-view></div>
+    <div ui-view></div>
 </body>
 </html>

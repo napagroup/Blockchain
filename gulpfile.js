@@ -110,6 +110,14 @@ gulp.task('sass', ['wipeFiles'], function () {
        .pipe(gulp.dest('./css'));
 });
 
+gulp.task('watch', function() {
+  gulp.watch('client/scss/*.scss', ['default']);
+  gulp.watch('client/scss/*/*.scss', ['default']);
+  gulp.watch('client/scss/*/*/*.scss', ['default']);
+  gulp.watch('client/*.html', ['default']);
+  gulp.watch('client/html/*/*.html', ['default']);
+});
+
 /*
 gulp.task('preventcache', function () {
     var rando = "";
