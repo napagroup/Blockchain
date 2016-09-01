@@ -16,6 +16,7 @@
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "chart.js": "^2.2.2",
     "components-font-awesome": "^4.6.1",
     "express": "^4.14.0",
     "extend": "^3.0.0",
@@ -28,6 +29,7 @@
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
+    "moment": "^2.14.1",
     "normalize.css": "^4.2.0"
   },
   "devDependencies": {},
