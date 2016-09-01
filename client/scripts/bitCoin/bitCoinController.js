@@ -52,9 +52,11 @@
                     function(data){
                         var values = data.values;
                         var xValues = [];
+                        var startDateTime = moment().subtract(values.length, 'days');
                         for(var i = 0; i< values.length; i++){
                             //$scope.labels.push( (new Date(values[i].x)).toDateString());
-                            $scope.labels.push(moment.unix(values[i].x).format('hh:mm:ss'));
+                            //$scope.labels.push(moment.unix(values[i].x).format('hh:mm:ss'));
+                            $scope.labels.push(startDateTime.add(1, 'days').format('M/DD/YYYY h:mm a'));
                             xValues.push(values[i].y);
                         }
                         $scope.data.push(xValues);
