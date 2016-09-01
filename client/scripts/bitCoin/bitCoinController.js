@@ -52,11 +52,13 @@
                 bitCoinService.getChartData({chartType: 'market-price'}).then(
                     function(data){
                         var values = data.values;
+                        var xValues = [];
                         for(var i = 0; i< values.length; i++){
                             $scope.labels.push( (new Date(values[i].x)).toDateString());
-                            $scope.data.push(values[i].y);
-
+                            xValues.push(values[i].y);
                         }
+                        $scope.data.push(xValues);
+
                         //$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
                         $scope.series = ['Market Price (USD)'];
                         /*$scope.data = [
