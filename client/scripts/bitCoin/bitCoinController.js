@@ -67,7 +67,7 @@
 
             };
 			
-			var newIOData = function(){
+			var newSocketIOData = function(){
 				var socket = io.connect('/');
 				socket.on('newTransaction', function (data) {
                     var now = new Date();
@@ -85,7 +85,7 @@
                 $scope.labels = []; 
                 getBitCoinData();
                 getChartData();
-				newIOData();
+				newSocketIOData();
 
             };
 

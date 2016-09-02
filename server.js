@@ -18,6 +18,7 @@ mySocket.onTransaction(function(data){
 	io.emit('newTransaction', data);
 });
 mySocket.onBlock(function(data){
+	console.log('new block ' + data);
 	io.emit('newBlock', data);
 });
 
