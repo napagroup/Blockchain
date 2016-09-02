@@ -1,54 +1,7 @@
 <div class="navbar has-ticker">
     <div class="ticker-wrap">
         <div class="ticker">
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>  
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>
-            <div class="ticker-item"><a href="">1</a></div>      
+            <div class="ticker-item"><a class='transactionHash' href="">no data to display yet.</a></div>
         </div>
         <p class="ticker-caption">Latest Transactions</p>
     </div>
@@ -74,7 +27,7 @@
             <canvas id="line" class="chart chart-line" chart-data="data"
                 chart-labels="labels" chart-series="series" chart-options="options"
                 chart-dataset-override="datasetOverride" chart-click="onClick">
-            </canvas> 
+            </canvas>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-2">
             <h3>Latest Blocks Mined</h3>
@@ -169,7 +122,7 @@
             <div class="tile text-center">
                 <i class="fa fa-cubes fa-3x"></i>
                 <h4>{{bitCoinInfo.n_blocks_mined | number : 0}}</h4>
-                <h5>Blocks Mined</h5>                
+                <h5>Blocks Mined</h5>
             </div>
         </div>
         <div class="col-md-2 col-sm-3 col-xs-6">
@@ -204,16 +157,15 @@
             <div class="tile text-center">
                 <i class="fa fa-dollar fa-3x"></i>
                 <h4>{{bitCoinInfo.miners_revenue_usd | number : 2}} k USD</h4>
-                <h5>Total Miner's Revenue</h5>                
+                <h5>Total Miner's Revenue</h5>
             </div>
         </div>
         <div class="col-md-2 col-sm-3 col-xs-6">
             <div class="tile text-center">
                 <i class="fa fa-shopping-cart fa-3x"></i>
                 <h4>{{bitCoinInfo.miners_revenue_usd / bitCoinInfo.n_tx | number : 2}}</h4>
-                <h5>Cost per Transaction</h5>                
+                <h5>Cost per Transaction</h5>
             </div>
         </div>
     </div>
 </div>
-<div id="rawdata"></div>

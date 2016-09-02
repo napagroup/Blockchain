@@ -67,28 +67,25 @@
 
             };
 			
-			var getTransactions = function(){
-
-				var socket = io.connect('http://localhost:12505');
-				socket.on('news', function (data) {
-				//console.log(data);
-                    //newdata = document.getElementById('rawdata').innerText + data.hash + ' in : ' + data.inputs + ' out : ' + data.out + ' relayed by: ' + data.relayed_by + '\n';
-                    //document.getElementById('rawdata').innerText = newdata;
-                    //dv.innerHTML = '<a href="">' + itemnumber + ' &#579;</a>';
-                //document.getElementsByClassName('ticker-item')[0].appendChild(dv);
-				//console.log(document.getElementsByClassName('ticker'))
-				//socket.emit('my other event', { my: 'data' });
-			  });                  
-              
-
+			var newIOData = function(){
+				var socket = io.connect('/');
+				socket.on('newTransaction', function (data) {
+                    var now = new Date();
+				    newdata = data.hash + ' @ ' + data.serverTime  + ' by: ' + data.relayed_by + '\n';
+				    document.getElementsByClassName('ticker-item')[0].innerText = newdata;
+			     });
+                socket.on('newBlock', function (data) {
+                    console.log('newBlock' + data)
+                 });
             };
+
             
             var init = function () {
                 $scope.data = [];
                 $scope.labels = []; 
                 getBitCoinData();
                 getChartData();
-				getTransactions();
+				newIOData();
 
             };
 
