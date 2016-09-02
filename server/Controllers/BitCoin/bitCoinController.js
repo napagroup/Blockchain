@@ -21,7 +21,22 @@ var getChartInfo = function(req, res) {
         chartType: req.query.chartType
     });
 };
+
+var getTransactions = function (req, res, io) {
+    blockChainService.getTransactions(
+            function (data) {
+                //console.log(data);
+				io.emit('news', data);
+            }, 
+            function(err) {
+                //res.status(500).json({error: err});
+				console.log(err);
+            });
+}
+
+
 module.exports = {
     browseBitCoin: browseBitCoin,
-    getChartInfo: getChartInfo
+    getChartInfo: getChartInfo,
+	getTransactions: getTransactions
 };

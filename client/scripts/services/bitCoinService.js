@@ -1,4 +1,5 @@
 (function () {
+	  
     angular.module("bitCoinExplorer")
     .factory("bitCoinService", ["$http", "$q", function ($http, $q) {
         
