@@ -89,12 +89,12 @@
                     
 
 				    var newdata =  parseFloat(Math.round(totalOutput * 100) / 100).toFixed(2);
-				    tickers[tickerLoop].innerText = newdata + '฿';
+				    tickers[tickerLoop].innerText = newdata + 'Ƀ';
                     tickers[tickerLoop].target='new';
                     tickers[tickerLoop].href = 'https://blockchain.info/tx/' + data.hash;
 
                     tickerLoop++;
-                    if (tickerLoop == 30) tickerLoop = 0;
+                    if (tickerLoop == tickers.length) tickerLoop = 0;
                     //console.log (tickerLoop);
 			     });
                 socket.on('newBlock', function (data) {
