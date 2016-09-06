@@ -88,7 +88,7 @@
                     if(totalOutput > 0) totalOutput = totalOutput/100000000;
                     
 
-				    var newdata =  Math.round(totalOutput * 100) / 100;
+				    var newdata =  parseFloat(Math.round(totalOutput * 100) / 100).toFixed(2);
 				    tickers[tickerLoop].innerText = newdata + '฿';
                     tickers[tickerLoop].target='new';
                     tickers[tickerLoop].href = 'https://blockchain.info/tx/' + data.hash;
