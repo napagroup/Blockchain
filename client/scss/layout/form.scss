@@ -1,0 +1,14 @@
+$form-input-padding: $base-padding;
+$form-input-border-radius: $base-border-radius;
+$form-input-search-margin: $base-padding;
+
+.form-input {
+	padding: $form-input-padding;
+	border-radius: $form-input-border-radius;
+	border: 0;
+	width: 100%;
+	&-search {
+		padding: ($form-input-padding / 2) $form-input-padding;
+		margin: $form-input-search-margin;
+	}
+}

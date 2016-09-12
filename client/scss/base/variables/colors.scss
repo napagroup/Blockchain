@@ -1,8 +1,9 @@
 // COLORS
-$logo-color:    #d5b019;
-$logo-bg-color: #67828d;
-
-$body-bg-color: #f5f5f5;
+		   $logo-color: #d5b019;
+		$logo-bg-color:	#67828d;
+		$body-bg-color: #f5f5f5;
+	  $base-link-color: #90CAF9;
+$base-link-hover-color: darken($base-link-color, 10%);
 
 // MIXINS
 
