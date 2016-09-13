@@ -5,8 +5,11 @@ var bodyParser = require('body-parser');
 var http = require('http').Server(app);
 var io = require('socket.io')(http)
 var port = 12505;
+var packageJSON = require('./package.json');
 
-//BLOCKCHAIN.INFO
+
+
+//BLOCKCHAIN.INFO SOCKET MODULE
 var Socket = require('blockchain.info/socket');
 var mySocket = new Socket();
 mySocket.onOpen(function(data){
@@ -32,8 +35,10 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //STARTING SERVER
 http.listen(port, function(){
-			console.log('bitcoint server started.')
+			console.log(packageJSON.name + ' version ' + packageJSON.version + ' started.');
 });
+
+
 
 //ROUTES
 app.use('/', express.static('./client/compiled'));
@@ -43,8 +48,9 @@ app.get('/api/bitCoin/blocks', bitCoinController.getBlocksFromBlockChain);
 
 //ESTABLISHED A WEBSOCKET CONNECTION TO THE CLIENT
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
+  console.log('client connected.');
+  //socket.emit('news', { hello: 'world' });
+  //socket.on('my other event', function (data) {
+//    console.log(data);
+  //});
 });

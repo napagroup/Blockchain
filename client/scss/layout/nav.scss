@@ -1,0 +1,16 @@
+$nav-link-color: white;
+$nav-link-hover-color: $base-link-color;
+
+$nav-item-padding: $base-padding;
+
+.nav > .nav-item > a {
+	color: $nav-link-color;
+	&:hover {
+		color: $nav-link-hover-color;
+	}
+}
+
+.nav-item {
+	padding: $nav-item-padding;
+	text-align: center;
+}

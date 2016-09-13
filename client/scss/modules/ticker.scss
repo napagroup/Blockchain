@@ -1,6 +1,9 @@
 $duration: 30s;
 $ticker-caption-color: #f9fafa;
+$ticker-item-font-size: 1.5rem;
 $ticker-height: 2rem;
+$ticker-item-min-width: 120px;
+$ticker-bg-color: darken($navbar-bg-color, 10%);
 
 @-webkit-keyframes ticker {
   0% {
@@ -36,7 +39,7 @@ $ticker-height: 2rem;
   width: 100vw;
   overflow: hidden;
   height: $ticker-height;
-  background-color: darken($navbar-bg-color, 10%); 
+  background-color: $ticker-bg-color; 
   padding-left: 100vw;  // offset items to begin 
   
 }
@@ -45,10 +48,24 @@ $ticker-height: 2rem;
   position: absolute;
   z-index: 1;
   top: -10px;
-  left: 5px;
+  left: 0;
   color: $ticker-caption-color;
   font-size: 11px;
   font-family: monospace;
+  height: $ticker-height;
+  background-color: $ticker-bg-color;
+  padding: 5px;
+  &:before {
+    content: "";    
+    background: -moz-linear-gradient(left, rgba($ticker-bg-color,0.65) 0%, rgba($ticker-bg-color,0) 100%);
+    background: -webkit-linear-gradient(left, rgba($ticker-bg-color,0.65) 0%,rgba($ticker-bg-color,0) 100%);
+    background: linear-gradient(to right, rgba($ticker-bg-color,0.65) 0%,rgba($ticker-bg-color,0) 100%);    
+    width: 10px;
+    height: 2rem;
+    position: absolute;
+    right: -10px;
+    top: 0;
+  }
 }
 
 .ticker {
@@ -76,9 +93,9 @@ $ticker-height: 2rem;
   &-item {
     
     display: inline-block;
-    
+    min-width: $ticker-item-min-width;
     padding: 0 2rem;
-    font-size: 1rem;  
+    font-size: $ticker-item-font-size;  
     font-family: monospace;
     a {
       color: #fff;

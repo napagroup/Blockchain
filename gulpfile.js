@@ -116,6 +116,7 @@ gulp.task('watch', function() {
   gulp.watch('client/scss/*/*/*.scss', ['default']);
   gulp.watch('client/*.html', ['default']);
   gulp.watch('client/html/*/*.html', ['default']);
+  gulp.watch('client/scripts/*/*.js', ['default']);
 });
 
 /*

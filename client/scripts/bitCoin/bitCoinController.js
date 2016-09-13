@@ -83,14 +83,46 @@
 			
 			var newSocketIOData = function(){
 				var socket = io.connect('/');
+                var tickers = document.querySelectorAll('[bitbitTicker]');
 				socket.on('newTransaction', function (data) {
-                    var now = new Date();
-				    newdata = data.hash + ' @ ' + data.serverTime  + ' by: ' + data.relayed_by + '\n';
-				    document.getElementsByClassName('ticker-item')[0].innerText = newdata;
+                    //var now = new Date();
+                    //AddTransactions(data.inputs);
+                    var inputs = data.inputs;
+                    var outputs = data.out;
+                    var totalInput = 0, totalOutput=0;
+
+                    for (var key in inputs){
+                        totalInput = totalInput + inputs[key].prev_out.value;
+                    }
+                    if (totalInput > 0) totalInput = totalInput/100000000;
+
+                    for (var key in outputs){
+                        totalOutput = totalOutput + outputs[key].value;
+                    }
+                    if(totalOutput > 0) totalOutput = totalOutput/100000000;
+                    
+
+				    var newdata =  parseFloat(Math.round(totalOutput * 100) / 100).toFixed(2);
+				    tickers[tickerLoop].innerText = newdata + 'Ƀ';
+                    tickers[tickerLoop].target='new';
+                    tickers[tickerLoop].href = 'https://blockchain.info/tx/' + data.hash;
+
+                    tickerLoop++;
+                    if (tickerLoop == tickers.length) tickerLoop = 0;
+                    //console.log (tickerLoop);
 			     });
                 socket.on('newBlock', function (data) {
                     console.log('newBlock' + data)
                  });
+            };
+
+
+            var AddTransactions = function(data){
+
+                for (var i = 0; i < data.length; i++) {
+                    
+                    console.log(data.value);
+        }
             };
 
             
