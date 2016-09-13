@@ -39,6 +39,7 @@ http.listen(port, function(){
 app.use('/', express.static('./client/compiled'));
 app.get('/api/bitCoin/browse', bitCoinController.browseBitCoin);
 app.get('/api/bitCoin/chart', bitCoinController.getChartInfo);
+app.get('/api/bitCoin/blocks', bitCoinController.getBlocksFromBlockChain);
 
 //ESTABLISHED A WEBSOCKET CONNECTION TO THE CLIENT
 io.on('connection', function (socket) {

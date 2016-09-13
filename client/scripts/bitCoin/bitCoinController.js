@@ -6,13 +6,27 @@
             '$state',
             'bitCoinService',
             function ($scope, $state, bitCoinService) {
-        
+                        
+            var getBlocksFromBlockChain = function($scope, $state) {
+                bitCoinService.getBlocksFromBlockChain()
+                    .then(getBlockResultsSuccess, getBlockResultsFailure)
+                    .finally(handleLoadComplete);
+            };
+            
             var getBitCoinData = function ($scope, $state) {
 				bitCoinService.getBitCoinData()
                     .then(getResultsSuccess, getResultsFailure)
                     .finally(handleLoadComplete);
             };
-        
+
+            var getBlockResultsSuccess = function(data) {   
+                $scope.blocks = [];
+                $scope.blocks = data.listofblocks;
+            }
+            
+            var getBlockResultsFailure = function(error) {                  
+            };
+            
             var getResultsSuccess = function(data) {
                 $scope.bitCoinInfo = data;                
             };
@@ -84,6 +98,7 @@
                 $scope.data = [];
                 $scope.labels = []; 
                 getBitCoinData();
+                getBlocksFromBlockChain();
                 getChartData();
 				newSocketIOData();
 

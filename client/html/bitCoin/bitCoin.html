@@ -30,7 +30,23 @@
             </canvas>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-2">
-            <h3>Latest Blocks Mined</h3>
+            <h3>Latest Blocks Mined</h3>            
+            <div ng-repeat="block in blocks">                
+                <div class="tile">                
+                    <div class="header">
+                        <a href="">{{block.height}}</a>
+                    </div>
+                    <div class="body text-right">
+                        <small>
+                            <div>{{block.n_tx}} transactions</div>
+                            <div>14,660.05 &#579; sent</div>
+                            <div>Relayed by {{block.relayed_by}}</div>
+                            <div>{{block.size/1000}}KB</div>
+                        </small>
+                    </div>
+                </div>
+            </div>
+<!--
             <div class="tile">
                 <div class="header">
                     <a href="">427708</a>
@@ -115,6 +131,7 @@
                     </small>
                 </div>
             </div>
+-->
         </div>
     </div>
     <div class="row dynamic-grid">

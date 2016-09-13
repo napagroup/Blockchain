@@ -1,5 +1,22 @@
 var blockChainService = require('../../Services/BlockChain/blockChainService.js');
 
+
+var getBlocksFromBlockChain = function(req, res){    
+    var jsonBlockDetailsData = {};    
+    jsonBlockDetailsData.listofblocks = [];
+    var blocks = [];
+                    
+    blockChainService.getBlocksFromBlockChain(
+        function(data) {            
+            res.json(data);                        
+        },
+        function(err) {
+            res.status(500).json({error: err});
+        }
+    );
+    
+}
+
 var browseBitCoin = function (req, res) {
     blockChainService.getInfoFromBlockChain(
             function (data) {
@@ -8,7 +25,7 @@ var browseBitCoin = function (req, res) {
             function(err) {
                 res.status(500).json({error: err});
             });
-}
+};
 
 var getChartInfo = function(req, res) {
     blockChainService.getChartInfo({
@@ -38,5 +55,6 @@ var getTransactions = function (req, res, io) {
 module.exports = {
     browseBitCoin: browseBitCoin,
     getChartInfo: getChartInfo,
-	getTransactions: getTransactions
+	getTransactions: getTransactions,
+    getBlocksFromBlockChain: getBlocksFromBlockChain
 };

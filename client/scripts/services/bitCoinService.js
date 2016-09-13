@@ -3,11 +3,22 @@
     angular.module("bitCoinExplorer")
     .factory("bitCoinService", ["$http", "$q", function ($http, $q) {
         
+        var getBlocksFromBlockChain = function(){
+            var deferred = $q.defer();
+            
+            $http.get('/api/bitCoin/blocks').then(function(response) {
+                deferred.resolve(response.data);                
+            }, function(err, status) {
+               deferred.reject(err.data);
+            }); 
+            
+            return deferred.promise;
+        };
+        
         var getBitCoinData = function () {
             
             var deferred = $q.defer();
-                
-              
+                              
             $http.get('/api/bitCoin/browse').then(function (response) {
                 deferred.resolve(response.data);
             }, function (err, status) {
@@ -29,14 +40,15 @@
         };
                 
         var init = function () {
-            //appSettings = appSettingsService.getAppSettings();
+            //appSettings = appSettingsService.getAppSettings();            
         }
 
         init();
 
         return {
             getBitCoinData: getBitCoinData,
-            getChartData: getChartData
+            getChartData: getChartData,
+            getBlocksFromBlockChain: getBlocksFromBlockChain
         };
     }]);
 }());
